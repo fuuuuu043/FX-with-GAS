@@ -11,7 +11,7 @@ st.title("📈 リアルタイム・ドル円予測（GAS連携版）")
 
 # スプレッドシートのURL（「リンクを知っている全員が閲覧可能」に設定してください）
 # 末尾を /export?format=csv に変えるのがコツです
-SHEET_URL = "あなたのスプレッドシートのURL/export?format=csv"
+SHEET_URL = "https://docs.google.com/spreadsheets/d/1qK0JPxTygLD_R9zynMrVOzEx_GsF56CVD0jJu0YLOSA/edit?gid=1201478238#gid=1201478238"
 
 @st.cache_data(ttl=60)
 def load_data():
