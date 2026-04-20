@@ -1,25 +1,3 @@
-惜しいです！URLの記述にいくつか**不要な記号（// や ? が重なっている箇所）**が含まれており、このままだとStreamlitがCSVファイルを正しく読み込めず、エラー（「スプレッドシートのデータを読み込み中...」の表示）になってしまいます。
-
-また、GAS側のスプレッドシートにヘッダー（見出し）がない場合のエラー回避策もコードに盛り込んでおきました。
-
-1. 修正が必要なURL
-以下のURLをコピーして、app.py の SHEET_URL の部分を差し替えてください。
-
-正しい形式のURL:
-SHEET_URL = "https://docs.google.com/spreadsheets/d/1qK0JPxTygLD_R9zynMrVOzEx_GsF56CVD0jJu0YLOSA/export?format=csv&gid=1201478238"
-
-修正した点:
-
-.../edit や ...//export となっていた箇所を /export に整理しました。
-
-? が2回使われていたのを、2つ目のパラメータは & でつなぐように修正しました。
-
-末尾の #gid=... は不要なので削除しました。
-
-2. コードの微調整（より確実に動かすために）
-GASから送られてくるデータに「見出し」がない場合を想定し、読み込み部分を少し強化した最終版です。
-
-Python
 import streamlit as st
 import pandas as pd
 from prophet import Prophet
